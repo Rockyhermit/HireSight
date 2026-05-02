@@ -282,8 +282,3 @@ pytest tests/
 
 The test suite covers AI engine behavior and key API endpoints.
 
----
-
-## License
-
-This project was built for educational and portfolio purposes.
