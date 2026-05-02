@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HireSphere Clipper</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-container">
+      <h1 class="title">HireSphere</h1>
+
+      <section id="login-view" class="panel">
+        <label class="label" for="email">Email</label>
+        <input id="email" type="email" class="input" placeholder="you@example.com" />
+
+        <label class="label" for="password">Password</label>
+        <input id="password" type="password" class="input" placeholder="Enter password" />
+
+        <button id="login-btn" class="btn btn-primary" type="button">Login</button>
+      </section>
+
+      <section id="logged-in-view" class="panel hidden">
+        <button id="save-job-btn" class="btn btn-primary" type="button">Save This Job</button>
+      </section>
+
+      <div id="status-message" class="status-message" aria-live="polite"></div>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
