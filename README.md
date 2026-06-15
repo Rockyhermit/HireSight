@@ -1,4 +1,4 @@
-# 🌐 HireSphere
+# 🌐 HireSight
 
 **An AI-powered job application tracker that helps you manage your job search, analyze your resume, and stay ahead in the hiring process.**
 
@@ -6,42 +6,37 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Running the App](#running-the-app)
-- [Chrome Extension](#chrome-extension)
-- [API Reference](#api-reference)
-- [Environment Variables](#environment-variables)
-- [Docker Setup](#docker-setup)
-- [Testing](#testing)
+* [Overview](#overview)
+* [Features](#features)
+* [Tech Stack](#tech-stack)
+* [Project Structure](#project-structure)
+* [Getting Started](#getting-started)
+* [Running the App](#running-the-app)
+* [Chrome Extension](#chrome-extension)
+* [API Reference](#api-reference)
+* [Environment Variables](#environment-variables)
+* [Docker Setup](#docker-setup)
+* [Testing](#testing)
 
 ---
 
 ## Overview
 
-HireSphere is a full-stack web application built as a Software Development Engineering portfolio project. It combines job application tracking with AI-powered resume analysis — giving users actionable feedback on how well their resume matches a given job description, along with ATS tips, keyword gaps, and a rewritten summary.
+HireSight is a full-stack web application built as a Software Development Engineering portfolio project. It combines job application tracking with AI-powered resume analysis — giving users actionable feedback on how well their resume matches a given job description, along with ATS tips, keyword gaps, and a rewritten summary.
 
-The project also includes a **Chrome Extension** (HireSphere Clipper) that lets users save job listings directly from LinkedIn, Indeed, and other job boards into their HireSphere dashboard with a single click.
+The project also includes a **Chrome Extension** (HireSight Clipper) that lets users save job listings directly from LinkedIn, Indeed, and other job boards into their HireSight dashboard with a single click.
 
 ---
 
 ## Features
 
-- **User Authentication** — Secure registration and login using JWT tokens
-- **Job Application Tracking** — Add, view, and manage all your job applications in one place
-- **Resume Upload** — Upload your resume directly against any job listing
-- **AI Resume Analysis** — Powered by Llama 3.3 70B via Groq API:
-  - Match score between your resume and the job description
-  - Missing keywords and skill gaps
-  - Suggested improvements
-  - ATS (Applicant Tracking System) optimization tips
-  - Rewritten professional summary
-- **Visual Analytics** — Radar chart breakdown of your resume's match across multiple dimensions
-- **Chrome Extension** — Save job listings from LinkedIn, Indeed, and more without leaving the page
-- **Dockerized Deployment** — Full containerization with Docker Compose
+*   **User Authentication** — Secure registration and login using JWT tokens
+*   **Job Application Tracking** — Add, view, and manage all your job applications in one place
+*   **Resume Upload** — Upload your resume directly against any job listing
+*   **AI Resume Analysis** — Powered by Llama 3.3 70B via Groq API. Provides a match score, identifies missing keywords and skill gaps, suggests improvements, offers ATS optimization tips, and generates a rewritten professional summary
+*   **Visual Analytics** — Radar chart breakdown of your resume's match across multiple dimensions
+*   **Chrome Extension** — Save job listings from LinkedIn, Indeed, and more without leaving the page
+*   **Dockerized Deployment** — Full containerization with Docker Compose
 
 ---
 
@@ -49,21 +44,21 @@ The project also includes a **Chrome Extension** (HireSphere Clipper) that lets 
 
 | Layer | Technology |
 |---|---|
-| Backend | FastAPI (Python 3.11) |
-| Database | PostgreSQL 17 |
-| ORM | SQLAlchemy 2.0 |
-| AI Model | Llama 3.3 70B Versatile (via Groq API) |
-| Authentication | JWT — python-jose + passlib/bcrypt |
-| Frontend | React (Create React App) |
-| Browser Extension | Chrome Extension (Manifest V3) |
-| Containerization | Docker + Docker Compose |
+| **Backend** | FastAPI (Python 3.11) |
+| **Database** | PostgreSQL 17 |
+| **ORM** | SQLAlchemy 2.0 |
+| **AI Model** | Llama 3.3 70B Versatile (via Groq API) |
+| **Authentication** | JWT — python-jose + passlib/bcrypt |
+| **Frontend** | React (Create React App) |
+| **Browser Extension** | Chrome Extension (Manifest V3) |
+| **Containerization** | Docker + Docker Compose |
 
 ---
 
 ## Project Structure
 
-```
-hiresphere/
+```text
+hiresight/
 ├── backend/
 │   ├── app/
 │   │   ├── __init__.py
@@ -109,17 +104,17 @@ hiresphere/
 
 ### Prerequisites
 
-- Python 3.11+
-- Node.js 18+
-- PostgreSQL 17
-- Google Chrome (for the extension)
-- A free [Groq API key](https://console.groq.com/)
+*   Python 3.11+
+*   Node.js 18+
+*   PostgreSQL 17
+*   Google Chrome (for the extension)
+*   A free [Groq API key](https://console.groq.com/)
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/hiresphere.git
-cd hiresphere
+git clone https://github.com/Rockyhermit/hiresight.git
+cd hiresight
 ```
 
 ### 2. Set up the backend
@@ -140,7 +135,7 @@ Create a `.env` file inside the `backend/` directory:
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 GROQ_BASE_URL=https://api.groq.com/openai/v1
-DATABASE_URL=postgresql://hiresphere_user:your_password@localhost:5432/jobtracker
+DATABASE_URL=postgresql://hiresight_user:your_password@localhost:5432/jobtracker
 SECRET_KEY=your_jwt_secret_key
 ```
 
@@ -151,8 +146,8 @@ See the [Environment Variables](#environment-variables) section for full details
 ```sql
 -- Run in psql as the postgres superuser
 CREATE DATABASE jobtracker;
-CREATE USER hiresphere_user WITH PASSWORD 'your_password';
-GRANT ALL PRIVILEGES ON DATABASE jobtracker TO hiresphere_user;
+CREATE USER hiresight_user WITH PASSWORD 'your_password';
+GRANT ALL PRIVILEGES ON DATABASE jobtracker TO hiresight_user;
 ```
 
 ### 5. Set up the frontend
@@ -174,8 +169,7 @@ venv\Scripts\activate
 uvicorn app.main:app --reload
 ```
 
-The API will be available at `http://127.0.0.1:8000`  
-Swagger docs: `http://127.0.0.1:8000/docs`
+> **Note:** The API will be available at `http://127.0.0.1:8000` and Swagger docs at `http://127.0.0.1:8000/docs`.
 
 ### Start the frontend
 
@@ -184,13 +178,13 @@ cd frontend
 npm start
 ```
 
-The app will open at `http://localhost:3000`
+> **Note:** The app will open at `http://localhost:3000`.
 
 ---
 
 ## Chrome Extension
 
-The **HireSphere Clipper** extension lets you save jobs from LinkedIn, Indeed, and other job boards directly to your dashboard.
+The **HireSight Clipper** extension lets you save jobs from LinkedIn, Indeed, and other job boards directly to your dashboard.
 
 ### Loading the extension (Developer Mode)
 
@@ -202,8 +196,8 @@ The **HireSphere Clipper** extension lets you save jobs from LinkedIn, Indeed, a
 ### Usage
 
 1. Browse to any job listing (LinkedIn, Indeed, etc.)
-2. Click the HireSphere Clipper icon in your Chrome toolbar
-3. Log in with your HireSphere credentials
+2. Click the HireSight Clipper icon in your Chrome toolbar
+3. Log in with your HireSight credentials
 4. Click **Save Job** — the listing is instantly added to your dashboard
 
 ---
@@ -216,15 +210,15 @@ The full interactive API documentation is available at `http://127.0.0.1:8000/do
 
 | Method | Endpoint | Description |
 |---|---|---|
-| `POST` | `/auth/register` | Register a new user |
-| `POST` | `/auth/login` | Login and receive a JWT token |
-| `GET` | `/jobs/` | List all job applications |
-| `POST` | `/jobs/` | Create a new job application |
-| `GET` | `/jobs/{id}` | Get a specific job application |
-| `POST` | `/jobs/{id}/upload-resume` | Upload a resume for a job |
-| `GET` | `/jobs/{id}/analysis` | Get AI analysis results |
+| **POST** | `/auth/register` | Register a new user |
+| **POST** | `/auth/login` | Login and receive a JWT token |
+| **GET** | `/jobs/` | List all job applications |
+| **POST** | `/jobs/` | Create a new job application |
+| **GET** | `/jobs/{id}` | Get a specific job application |
+| **POST** | `/jobs/{id}/upload-resume` | Upload a resume for a job |
+| **GET** | `/jobs/{id}/analysis` | Get AI analysis results |
 
-All protected endpoints require an `Authorization: Bearer <token>` header.
+> **Important:** All protected endpoints require an `Authorization: Bearer <token>` header.
 
 ---
 
@@ -245,7 +239,7 @@ The entire application stack can be run with a single command using Docker Compo
 
 ### Prerequisites
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
+*   [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
 
 ### Start all services
 
@@ -254,9 +248,9 @@ docker-compose up --build
 ```
 
 This will spin up:
-- The **FastAPI backend** on port `8000`
-- The **React frontend** on port `3000`
-- A **PostgreSQL** database on port `5432`
+*   The **FastAPI backend** on port `8000`
+*   The **React frontend** on port `3000`
+*   A **PostgreSQL** database on port `5432`
 
 ### Stop all services
 
@@ -281,4 +275,3 @@ pytest tests/
 ```
 
 The test suite covers AI engine behavior and key API endpoints.
-
